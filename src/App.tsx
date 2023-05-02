@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SignUp from './Components/SignUpComponent';
 import SignIn from './Components/SignInComponent';
 import CodewarsProfile from './Components/CodewarsProfileComponent/CodeWarsProfile';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignUp from './Components/SignUpComponent';
+import SignIn from './Components/SignInComponent';
 
 function App() {
   return (
