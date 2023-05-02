@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.brColor{
+  background-color: #16171B;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mLogo{
+  padding-left: 7px;
+}
+
+.cBody{
+  padding-left: 20rem;
+  padding-right: 20rem;
+  padding-top: 3rem;
+}
+
+.cuzCard{
+  background-color: #101114;
+  height: 20rem;
+}
+
+.infoColor{
+  background-color: #0A0A0A;
+  width: 49rem;
+}
