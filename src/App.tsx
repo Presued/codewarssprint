@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SignUp from './Components/SignUpComponent';
 import SignIn from './Components/SignInComponent';
+import CodewarsProfile from './Components/CodewarsProfileComponent/CodeWarsProfile';
 
 function App() {
   return (
