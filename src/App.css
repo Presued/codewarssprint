@@ -48,18 +48,39 @@
   padding-left: 7px;
 }
 
+.moveCard{
+ padding-top: 7rem;
+}
+
 .cBody{
-  padding-left: 20rem;
-  padding-right: 20rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
   padding-top: 3rem;
 }
 
 .cuzCard{
-  background-color: #101114;
-  height: 20rem;
+  background-color: #222327;
+  height: 25rem;
 }
 
-.infoColor{
-  background-color: #0A0A0A;
-  width: 49rem;
+.listCuz{
+  border-radius: 7px;
+  border-color: #757575;
+  background-color: #222327;
+  color: white;
 }
+
+.cusLi{
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+.signInButton{
+  background-color: #BB432C !important; 
+  border-color: #BB432C !important;
+  width: 15.5rem;
+  height: 2rem;
+  text-align: center;
+}
+
+
