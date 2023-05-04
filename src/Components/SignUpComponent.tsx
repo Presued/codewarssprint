@@ -32,8 +32,9 @@ const SignUp = (): JSX.Element => {
                                     <Col>
                                         <div>
                                             <ListGroup className='cusLi'>
-                                                <Form.Control  className='listCuz' type="email" placeholder="username"/>
+                                                <Form.Control  className='listCuz' type="email" placeholder="Codewars Login"/>
                                                 <Form.Control  className='listCuz' type="email" placeholder="password"/>
+                                                <Form.Control  className='listCuz' type="email" placeholder="Confirm Password"/>
                                             </ListGroup>
                                         </div>
                                     </Col>
@@ -44,6 +45,14 @@ const SignUp = (): JSX.Element => {
                                         <div className='d-flex justify-content-center pt-4'>
                                             <Button className='signInButton'>Sign In</Button>
                                         </div>
+                                    </Col>
+                                </Row>
+
+                                <Row>
+                                    <Col>
+                                    <div>
+                                    <p className='text-white text-center pt-5'> <u>Log in </u> <span>if you don't have an account already </span> </p>
+                                    </div>
                                     </Col>
                                 </Row>
 

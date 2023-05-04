@@ -60,11 +60,11 @@
 
 .cuzCard{
   background-color: #222327;
-  height: 25rem;
+  height: 30rem;
 }
 
 .listCuz{
-  border-radius: 7px;
+  border-radius: 5px;
   border-color: #757575;
   background-color: #222327;
   color: white;
