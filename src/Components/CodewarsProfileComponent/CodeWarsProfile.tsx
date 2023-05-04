@@ -77,7 +77,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
             </Row>
             <Row className="row-data">
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Completed Kata:</span> {totalCompletedKata}</Col>
-                <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Leaderboard Position:</span> #{leaderboardPosition.toLocaleString()}</Col>                
+                <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Leaderboard Position:</span> #{leaderboardPosition?.toLocaleString()}</Col>                
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Authored Kata:</span> {totalAuthoredKata}</Col>
             </Row>
         </Container>
