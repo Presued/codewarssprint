@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './CodeWarsProfile.css';
 
+
 interface UserData {
     username?: string;
     name?: string;
