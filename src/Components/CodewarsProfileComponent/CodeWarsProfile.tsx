@@ -31,7 +31,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`https://www.codewars.com/api/v1/users/Brand0nLe`);
+            const response = await fetch(`https://www.codewars.com/api/v1/users/${userId}`);
             const data: UserData = await response.json();
             setUserData(data);
 
@@ -51,7 +51,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
         honor,
         clan,
         leaderboardPosition,
-        codeChallenges: { totalCompleted: totalCompletedKata, totalAuthored: totalAuthoredKata } = {},
+        codeChallenges: { totalCompleted: totalCompletedKata, totalAuthored: totalAuthoredKata } = { totalCompleted: 0, totalAuthored: 0 },
     } = userData;
 
     return (
@@ -77,7 +77,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
             </Row>
             <Row className="row-data">
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Completed Kata:</span> {totalCompletedKata}</Col>
-                <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Leaderboard Position:</span> #{leaderboardPosition.toLocaleString()}</Col>                
+                <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Leaderboard Position:</span> #{(leaderboardPosition ?? 0).toLocaleString()}</Col>
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Authored Kata:</span> {totalAuthoredKata}</Col>
             </Row>
         </Container>

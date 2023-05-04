@@ -6,7 +6,7 @@ import CodewarsProfile from './Components/CodewarsProfileComponent/CodeWarsProfi
 function App() {
   return (
     <div className="App">
-<CodewarsProfile/>
+      <CodewarsProfile userId="Brand0nLe" />
     </div>
   );
 }
