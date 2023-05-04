@@ -40,6 +40,12 @@ async function GetUserByUsername(Username){
 
 }
 
+async function GetAllUsers(){
+    const promise = await fetch("https://dev.codewars.com/#introduction/User/GetAllUsers");
+    const data = await promise.json();
+    console.log(data);
+    return data;
+}
 
 
 
@@ -47,4 +53,5 @@ async function GetUserByUsername(Username){
 
 
 
-export { createAcc, login, GetUserByUsername }
+
+export { createAcc, login, GetUserByUsername, GetAllUsers }
