@@ -89,7 +89,7 @@ const handleInputPassword = (event: any) => {
                                 <Row>
                                     <Col>
                                     <div>
-                                    <p className='text-white text-center pt-5'> <Link className='loginSignUp' to="/">Log in </Link> <span>if you don't have an account already </span> </p>
+                                    <p className='text-white text-center pt-5'> <Link className='loginSignUp' to="/">Log in </Link> <span>if you have an account already </span> </p>
                                     </div>
                                     </Col>
                                 </Row>
