@@ -1,12 +1,23 @@
 import React from 'react';
-import '../FooterComponent/FooterComponent.css';
-// import GitHubIcon from '@material-ui/icons/GitHub';
-// import LinkedInIcon from '@material-ui/icons/LinkedIn';
-// import TwitterIcon from '@material-ui/icons/Twitter';
+import './Footer.css';
+import GitHubIcon from '../../assets/images/github.png';
+import LinkedInIcon from '../../assets/images/linkedin.png';
+import TwitterIcon from '../../assets/images/twitter.png';
+
+
 
 const Footer: React.FC = () => {
     return (
-        <div className="footer-gradient"></div>
+        <div className="footer-gradient">
+            <div className="left">
+                © 2023 CodeStack Academy Day Class
+            </div>
+            <div className="right">
+                <GitHubIcon />
+                <LinkedInIcon />
+                <TwitterIcon />
+            </div>
+        </div>
     );
 };
 

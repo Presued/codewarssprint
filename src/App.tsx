@@ -20,6 +20,7 @@ function App() {
    <Route path='/SignUp' element={<SignUp />} />
    <Route path='/CodeWarsProfile' element={<CodewarsProfile userId='12345' />} />
    <Route path='/SearchComponent' element={<SearchComponent/>} />
+   <Route path='/RandomComponent' element={<RandomComponent/>} />
    </Routes>
    </BrowserRouter>
   );

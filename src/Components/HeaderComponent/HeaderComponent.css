@@ -15,3 +15,8 @@
     top: 30px;
     left: 40px;
 }
+.logout-button {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
