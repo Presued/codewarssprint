@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     return (
         <div className="footer-gradient">
             <div className="left">
-                © 2023 Your Company Name
+                © 2023 CodeStack Academy Day Class
             </div>
             <div className="right">
                 <GitHubIcon />
