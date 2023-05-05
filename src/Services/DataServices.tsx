@@ -14,7 +14,7 @@ export async function createAcc(createdUser: { Id: number; Username: string; Pas
         throw new Error('Username does not exist');
     }
     else{
-        const res = await fetch('https://katacode.azurewebsites.net/user/adduser', {
+        const res = await fetch('https://codewarskata.azurewebsites.net/user/adduser', {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"
@@ -34,7 +34,7 @@ export async function createAcc(createdUser: { Id: number; Username: string; Pas
 
 
 export async function login(loginUser: { Username: string; Password: string; }) {
-    const res = await fetch('https://katacode.azurewebsites.net/user/login', {
+    const res = await fetch('https://codewarskata.azurewebsites.net/user/login', {
         method: "POST",
         headers: {
             'Content-Type': "application/json"
