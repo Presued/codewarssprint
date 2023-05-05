@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './CodeWarsProfile.css';
+import './AdminProfileComponent.css';
 import Footer from '../FooterComponent/FooterComponent';
 import Header from '../HeaderComponent/HeaderComponent';
 import Username from "../SignInComponent";
 import { useLocation } from 'react-router-dom';
+
 
 interface UserData {
     username?: string;
@@ -35,30 +36,30 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
     const [kyuLevel, setKyuLevel] = useState<number | null>(null);
     const [kyuColor, setKyuColor] = useState<string>('transparent');
 
+
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`https://www.codewars.com/api/v1/users/${Username}`);
             const data: UserData = await response.json();
             setUserData(data);
+            console.log(data)
 
             const kyuRank = Math.abs(data.ranks?.overall?.rank ?? 0);
             setKyuLevel(kyuRank);
             const kyuColor = data.ranks?.overall?.color ?? 'transparent';
             setKyuColor(kyuColor);
         };
+
         fetchData();
     }, [userId]);
 
     const {
         username,
-        name = 'No name provided',
-        honor = 0,
-        clan = 'No clan provided',
+        name,
+        honor,
+        clan,
         leaderboardPosition,
-        codeChallenges: {
-            totalCompleted: totalCompletedKata = 0,
-            totalAuthored: totalAuthoredKata = 0
-        } = {},
+        codeChallenges: { totalCompleted: totalCompletedKata, totalAuthored: totalAuthoredKata } = {},
     } = userData;
 
     return (
@@ -69,7 +70,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
                     <Row className="row-title">
                         <Col xs={6}>
                             <span className="kyu text" style={{ color: kyuColor }}>{kyuLevel} Kyu</span>
-                            {username || 'BrandonHasAUserName'}
+                            {userData.username}
                         </Col>
                     </Row>
                     <Row>
