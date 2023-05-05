@@ -5,6 +5,7 @@ import Footer from '../FooterComponent/FooterComponent';
 import Header from '../HeaderComponent/HeaderComponent';
 import Username from "../SignInComponent";
 import { useLocation } from 'react-router-dom';
+import SearchComponent from '../SearchComponent/SearchComponent';
 
 interface UserData {
     username?: string;
@@ -88,9 +89,9 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
                     <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Authored Kata:</span> {totalAuthoredKata || '0'}</Col>
                 </Row>
             </Container>
+            <SearchComponent />
             <Footer />
         </>
-
     );
 };
 
