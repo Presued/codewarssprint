@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeaderComponent.css'
 import logo from '../../assets/CodeReserve.png';
-import logout from '../../assets/Log Out.png'
+import logout from '../../assets/logout.png';
 
 const Header: React.FC = () => {
     return (

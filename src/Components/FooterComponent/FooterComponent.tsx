@@ -1,8 +1,8 @@
 import React from 'react';
 import './FooterComponent.css';
-import GitHubIcon from '../../assets/github.png';
-import LinkedInIcon from '../../assets/linkedin.png';
-import TwitterIcon from '../../assets/twitter.png';
+// import GitHubIcon from '../../assets/github.png';
+// import LinkedInIcon from '../../assets/linkedin.png';
+// import TwitterIcon from '../../assets/twitter.png';
 
 
 
@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
                 © 2023 CodeStack Academy Day Class
             </div>
             <div className="right">
-                <GitHubIcon />
+                {/* <GitHubIcon />
                 <LinkedInIcon />
-                <TwitterIcon />
+                <TwitterIcon /> */}
             </div>
         </div>
     );

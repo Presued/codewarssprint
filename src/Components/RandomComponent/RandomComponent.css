@@ -1,11 +1,15 @@
+body {
+    background-color: black;
+}
+
 .randomCard {
-    background-image: linear-gradient( #292A2D, #222327);
+    background-image: linear-gradient(#292A2D, #222327);
     height: 15rem;
     width: 73rem;
     color: white;
     border-width: 4px;
     border-style: solid;
-    border-image: linear-gradient(to right, #EB9514 , #1F87E7) 1;
+    border-image: linear-gradient(to right, #EB9514, #1F87E7) 1;
     display: flex;
     align-items: center;
 }
@@ -13,6 +17,7 @@
 .randomContainer {
     margin-top: 10rem;
     margin-left: 5rem;
+    height: 100rem;
 }
 
 .randomTitle {
@@ -23,16 +28,12 @@
 }
 
 .randomFirstRow {
-    width: 21rem;
-    height: 15rem;
-}
-
-.randomFirstCol {
     height: 15rem;
     border-right: solid 4px #AC9156;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-right: 2rem;
 }
 
 .languageBtn {
@@ -60,20 +61,139 @@
     font-size: 12px;
 }
 
-.randomKataRow {
-    display: flex;
-    width: 50rem;
-    margin-bottom: 10rem;
+.kyuNum {
+    margin-left: 2rem !important;
+    width: 7rem;
+    margin: 0%;
+    font-size: 32px;
 }
 
-.kyuNum {
-    margin-left: 1.5rem;
-    font-size: 32px;
-    font-weight: bold;
+.kyuCol {
+    display: flex;
+    align-items: center;
+}
+
+.kataDiv {
+    margin-left: 9rem;
+    width: 40rem;
+}
+
+.descriptionTitle {
+    font-size: 24px;
+    margin: 0%;
+}
+
+.descTitle {
+    margin: 0%;
+    font-size: 24px;
+}
+
+.authorTitle {
+    font-size: 16px;
+    margin: 0%;
+    margin-bottom: 0.5rem !important;
 }
 
 .randomKata {
     font-size: 24px;
-    margin-top: 2.5rem;
-    margin-left: 2rem;
+    margin: 0%;
+}
+
+/* SearchComponent */
+
+.filterTitle {
+    margin-right: 17rem;
+    font-size: 32px;
+    color: white;
+}
+
+.searchComponent {
+    margin-top: 10rem;
+    width: 407px;
+    height: 509px;
+    background-color: #16171B;
+    border: 2px solid white;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.inputBox {
+    width: 351px;
+    height: 43px;
+    background-color: #222327;
+    border-radius: 4px;
+    border: 2px solid white;
+    font-size: 25px;
+}
+
+.sortTitle {
+    margin-right: 18rem;
+    font-size: 20px;
+    color: white;
+}
+
+.dropdownBox {
+    width: 351px;
+    height: 43px;
+    background-color: #222327;
+    border-radius: 4px;
+    border: 2px solid white;
+    font-size: 12px;
+    color: white;
+}
+
+.lanuageTitle {
+    margin-right: 16rem;
+    font-size: 20px;
+    color: white;
+}
+
+.diffTitle {
+    margin-right: 17rem;
+    font-size: 20px;
+    color: white;
+}
+
+.dropdownItem {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: block;
+}
+
+.placeHolder {
+    text-align: left !important;
+}
+
+.dropdownMenu {
+    position: absolute;
+    background-color: #222327;
+    width: 351px;
+    height: 6rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdownMenuLang {
+    position: absolute;
+    background-color: #222327;
+    width: 351px;
+    height: 10.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdownMenuKyu {
+    position: absolute;
+    background-color: #222327;
+    width: 351px;
+    height: 10rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
