@@ -1,8 +1,10 @@
 import React from 'react';
 import './Footer.css';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '../../assets/images/github.png';
+import LinkedInIcon from '../../assets/images/linkedin.png';
+import TwitterIcon from '../../assets/images/twitter.png';
+
+
 
 const Footer: React.FC = () => {
     return (
