@@ -100,3 +100,11 @@
   width: 300px;
 }
 
+.loginInput ::placeholder{
+  color: #222327;
+}
+
+.loginSignUp{
+  color: white;
+  padding-right: 10px;
+}

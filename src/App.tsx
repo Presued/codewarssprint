@@ -7,11 +7,14 @@ import SignIn from './Components/SignInComponent';
 import CodewarsProfile from './Components/CodewarsProfileComponent/CodeWarsProfile';
 import RandomComponent from './Components/RandomComponent/RandomComponent';
 import SearchComponent from './Components/SearchComponent/SearchComponent';
+import Header from './Components/HeaderComponent/HeaderComponent';
+import Footer from './Components/FooterComponent/FooterComponent';
 
 
 function App() {
   return (
    <BrowserRouter>
+    
    <Routes>
     <Route path='/' element={<SignIn />} />
    <Route path='/SignUp' element={<SignUp />} />
@@ -19,7 +22,6 @@ function App() {
    <Route path='/SearchComponent' element={<SearchComponent/>} />
    </Routes>
    </BrowserRouter>
-   
   );
 }
 

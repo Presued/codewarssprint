@@ -11,7 +11,7 @@ import CodewarsProfile from './CodewarsProfileComponent/CodeWarsProfile';
 
 
 
-const SignUp = (): JSX.Element => {
+const SignIn = (): JSX.Element => {
     const { setUser } = useContext(MyContext);
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
@@ -65,16 +65,16 @@ const SignUp = (): JSX.Element => {
                                         <div  >
                                         <Form className='logForm'>
                                     <Form.Group>
-                                        <input className='loginINputAndBtn' onChange={({ target: { value } }) => setUsername(value)} type='text' value={Username} placeholder='Username'/>
+                                        <input className='loginINputAndBtn loginInput' onChange={({ target: { value } }) => setUsername(value)} type='text' value={Username} placeholder='Username'/>
                                     </Form.Group>
                                     <Form.Group >
-                                        <input className='mb-10 loginINputAndBtn' type='password' onChange={({ target: { value } }) => setPassword(value)} placeholder='Password' />
+                                        <input className='mb-10 loginINputAndBtn loginInput' type='password' onChange={({ target: { value } }) => setPassword(value)} placeholder='Password' />
                                     </Form.Group>
                                 </Form>
                                 <Button className="btn btn-primary loginBtn loginINputAndBtn" onClick={() => handleLogin(Username)} variant=''>Login</Button>
                                         </div>
                                         <div>
-                                    <p className='text-white text-center pt-3'><span className='signUp'>Sign up</span> if you don't have an account already</p>
+                                    <p className='text-white text-center pt-3'><Link to="/SignUp" className='signUp loginSignUp'>Sign up</Link> if you don't have an account already</p>
                                     </div>
                                     </Col>
                                 </Row>
@@ -88,4 +88,4 @@ const SignUp = (): JSX.Element => {
     )
 }
 
-export default SignUp;
+export default SignIn;

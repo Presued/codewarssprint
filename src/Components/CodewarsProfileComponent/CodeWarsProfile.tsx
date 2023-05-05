@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './CodeWarsProfile.css';
 import Footer from '../FooterComponent/FooterComponent';
+import Header from '../HeaderComponent/HeaderComponent';
 
 interface UserData {
     username?: string;
@@ -56,8 +57,11 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
     } = userData;
 
     return (
+        <>
+         <Header/>
         <Container className="profile-container">
             <Container className='text-container'>
+                
                 <Row className="row-title">
                     <Col xs={6}>
                         <span className="kyu text" style={{ color: kyuColor }}>{kyuLevel} Kyu</span>
@@ -81,8 +85,10 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Leaderboard Position:</span> #{leaderboardPosition?.toLocaleString()}</Col>                
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Authored Kata:</span> {totalAuthoredKata}</Col>
             </Row>
-            <Footer/>
         </Container>
+        <Footer />
+        </>
+       
     );
 };
 
