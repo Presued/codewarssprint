@@ -1,8 +1,8 @@
 import React from 'react';
-import './Footer.css';
-import GitHubIcon from '../../assets/images/github.png';
-import LinkedInIcon from '../../assets/images/linkedin.png';
-import TwitterIcon from '../../assets/images/twitter.png';
+import './FooterComponent.css';
+import GitHubIcon from '../../assets/github.png';
+import LinkedInIcon from '../../assets/linkedin.png';
+import TwitterIcon from '../../assets/twitter.png';
 
 
 
