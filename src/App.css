@@ -64,7 +64,7 @@
 }
 
 .listCuz{
-  border-radius: 5px;
+  border-radius: 7px;
   border-color: #757575;
   background-color: #222327;
   color: white;
@@ -84,3 +84,27 @@
 }
 
 
+.enterLogin{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginBtn{
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.loginINputAndBtn{
+  width: 300px;
+}
+
+.loginInput ::placeholder{
+  color: #222327;
+}
+
+.loginSignUp{
+  color: white;
+  padding-right: 10px;
+}

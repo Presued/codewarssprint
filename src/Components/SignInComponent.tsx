@@ -1,26 +1,44 @@
 import '../App.css'
-import { Row, Col, Card, ListGroup,Form, Button } from 'react-bootstrap'
+import { Row, Col, Card,Form, Button, ListGroup } from 'react-bootstrap'
 import CodeLogo from '../Asset/codewarslogo.svg'
 import CodeReserve from '../Asset/CodeReserveLogo-removebg-preview.png'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, {useState, useContext} from "react";
+import { MyContext } from '../MyContext';
+import { useNavigate } from 'react-router-dom';
+import { login } from "../Services/DataServices";
+import { Link } from 'react-router-dom';
+import CodewarsProfile from './CodewarsProfileComponent/CodeWarsProfile';
+
 
 
 const SignIn = (): JSX.Element => {
-
-    let navigate = useNavigate();
-    const [userName, setUserName] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
-    const handleLogin = async () => {
+    const { setUser } = useContext(MyContext);
+    const [Username, setUsername] = useState('');
+    const [Password, setPassword] = useState('');
+    const navigate = useNavigate();
+        
+    const handleLogin = async (name: any) => {
         let userData = {
-            userName,
-            password
+            Username,
+            Password
+        }
+        setUser(Username);
+        console.log(Username)
+        try {
+            let token = await login(userData);
+            if (token.token != null) {
+                localStorage.setItem("Token", token.token);
+                navigate('/CodewarsProfile', { state: {Username} });
+            }
+        } catch (error) {
+            console.error(error);
+            
         }
     }
 
-    return(
-        <div className="brColor">
+    return (
+        <>
+            <div className="brColor">
 
                 <Row className='moveCard'>
                     <Col className='cBody'>
@@ -33,7 +51,6 @@ const SignIn = (): JSX.Element => {
                                         </div>
                                     </Col>
                                 </Row>
-
                                 <Row>
                                     <Col>
                                         <div>
@@ -41,30 +58,21 @@ const SignIn = (): JSX.Element => {
                                         </div>
                                     </Col>
                                 </Row>
-
                                 <Row>
-                                    <Col>
+                                    <Col  className="enterLogin">
+                                        <div  >
+                                        <Form className='logForm'>
+                                    <Form.Group>
+                                        <input className='loginINputAndBtn loginInput' onChange={({ target: { value } }) => setUsername(value)} type='text' value={Username} placeholder='Username'/>
+                                    </Form.Group>
+                                    <Form.Group >
+                                        <input className='mb-10 loginINputAndBtn loginInput' type='password' onChange={({ target: { value } }) => setPassword(value)} placeholder='Password' />
+                                    </Form.Group>
+                                </Form>
+                                <Button className="btn btn-primary loginBtn loginINputAndBtn" onClick={() => handleLogin(Username)} variant=''>Login</Button>
+                                        </div>
                                         <div>
-                                            <ListGroup className='cusLi'>
-                                                <Form.Control  className='listCuz' type="email" placeholder="Username"/>
-                                                <Form.Control  className='listCuz' type="email" placeholder="password"/>
-                                            </ListGroup>
-                                        </div>
-                                    </Col>
-                                </Row>
-
-                                <Row>
-                                    <Col>
-                                        <div className='d-flex justify-content-center pt-4'>
-                                            <Button className='signInButton'>Sign In</Button>
-                                        </div>
-                                    </Col>
-                                </Row>
-
-                                <Row>
-                                    <Col>
-                                    <div>
-                                    <p className='text-white text-center pt-5'> <u>Sign up </u> <span>if you don't have an account already </span> </p>
+                                    <p className='text-white text-center pt-3'><Link to="/SignUp" className='signUp loginSignUp'>Sign up</Link> if you don't have an account already</p>
                                     </div>
                                     </Col>
                                 </Row>
@@ -74,7 +82,9 @@ const SignIn = (): JSX.Element => {
                     </Col>
                 </Row>
             </div>
+        </>
     )
 }
+
 
 export default SignIn;
