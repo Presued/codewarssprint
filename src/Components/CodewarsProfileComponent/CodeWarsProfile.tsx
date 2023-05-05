@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './CodeWarsProfile.css';
+import Footer from '../FooterComponent/FooterComponent';
 
 interface UserData {
     username?: string;
@@ -31,7 +32,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`https://www.codewars.com/api/v1/users/Brand0nLe`);
+            const response = await fetch(`https://www.codewars.com/api/v1/users/JLamzon`);
             const data: UserData = await response.json();
             setUserData(data);
 
@@ -80,6 +81,7 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Leaderboard Position:</span> #{leaderboardPosition?.toLocaleString()}</Col>                
                 <Col xs={4}><span style={{ color: "#999999", fontFamily: "LatoBold" }}>Total Authored Kata:</span> {totalAuthoredKata}</Col>
             </Row>
+            <Footer/>
         </Container>
     );
 };

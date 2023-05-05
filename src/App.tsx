@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SignUp from './Components/SignUpComponent';
 import SignIn from './Components/SignInComponent';
 import CodewarsProfile from './Components/CodewarsProfileComponent/CodeWarsProfile';
+import RandomComponent from './Components/RandomComponent/RandomComponent';
+import SearchComponent from './Components/SearchComponent/SearchComponent';
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
    <Routes>
     <Route path='/' element={<SignIn />} />
    <Route path='/SignUp' element={<SignUp />} />
+   <Route path='/CodeWarsProfile' element={<CodewarsProfile userId="12345" />} />
+   <Route path='/SearchComponent' element={<SearchComponent/>} />
    </Routes>
    </BrowserRouter>
    

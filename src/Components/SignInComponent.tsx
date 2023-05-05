@@ -1,5 +1,5 @@
 import '../App.css'
-import { Row, Col, Card,Form, Button } from 'react-bootstrap'
+import { Row, Col, Card,Form, Button, ListGroup } from 'react-bootstrap'
 import CodeLogo from '../Asset/codewarslogo.svg'
 import CodeReserve from '../Asset/CodeReserveLogo-removebg-preview.png'
 import React, {useState, useContext} from "react";
@@ -7,6 +7,9 @@ import { MyContext } from '../MyContext';
 import { useNavigate } from 'react-router-dom';
 import { login } from "../Services/DataServices";
 import { Link } from 'react-router-dom';
+import CodewarsProfile from './CodewarsProfileComponent/CodeWarsProfile';
+
+
 
 const SignUp = (): JSX.Element => {
     const { setUser } = useContext(MyContext);
@@ -27,7 +30,7 @@ const SignUp = (): JSX.Element => {
             let token = await login(userData);
             if (token.token != null) {
                 localStorage.setItem("Token", token.token);
-                navigate('/DashBoard');
+                navigate('/CodewarsProfile');
             }
         } catch (error) {
             console.error(error);
@@ -58,18 +61,21 @@ const SignUp = (): JSX.Element => {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col>
-                                        <div>
-                                        <Form className="enterLogin">
+                                    <Col  className="enterLogin">
+                                        <div  >
+                                        <Form className='logForm'>
                                     <Form.Group>
-                                        <input onChange={({ target: { value } }) => setUsername(value)} type='text' value={Username} placeholder='Username'/>
+                                        <input className='loginINputAndBtn' onChange={({ target: { value } }) => setUsername(value)} type='text' value={Username} placeholder='Username'/>
                                     </Form.Group>
-                                    <Form.Group>
-                                        <input type='password' onChange={({ target: { value } }) => setPassword(value)} placeholder='Password' />
+                                    <Form.Group >
+                                        <input className='mb-10 loginINputAndBtn' type='password' onChange={({ target: { value } }) => setPassword(value)} placeholder='Password' />
                                     </Form.Group>
                                 </Form>
-                                <Button className="btn btn-primary" onClick={() => handleLogin(Username)} variant=''>Login</Button>
+                                <Button className="btn btn-primary loginBtn loginINputAndBtn" onClick={() => handleLogin(Username)} variant=''>Login</Button>
                                         </div>
+                                        <div>
+                                    <p className='text-white text-center pt-3'><span className='signUp'>Sign up</span> if you don't have an account already</p>
+                                    </div>
                                     </Col>
                                 </Row>
 
