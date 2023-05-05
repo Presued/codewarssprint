@@ -108,3 +108,18 @@
   color: white;
   padding-right: 10px;
 }
+
+.searchCardCuz{
+  padding-left: 7px;
+  background-color: #16171B;
+  border-color: white;
+}
+
+.carD{
+  padding-left: 5rem;
+}
+
+.seCuz{
+  background-color: #222327;
+  border-color: white;
+}

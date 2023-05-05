@@ -9,7 +9,7 @@ import RandomComponent from './Components/RandomComponent/RandomComponent';
 import SearchComponent from './Components/SearchComponent/SearchComponent';
 import Header from './Components/HeaderComponent/HeaderComponent';
 import Footer from './Components/FooterComponent/FooterComponent';
-
+import AdminSearchComponent from './Components/AdminSearchComponent/AdminSearchComponent';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
    <Route path='/CodeWarsProfile' element={<CodewarsProfile userId='12345' />} />
    <Route path='/SearchComponent' element={<SearchComponent/>} />
    <Route path='/RandomComponent' element={<RandomComponent/>} />
+   <Route path='/AdminSearchComponent' element={<AdminSearchComponent />} />
    </Routes>
    </BrowserRouter>
   );
