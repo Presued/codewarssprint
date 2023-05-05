@@ -6,7 +6,8 @@ let userData = {};
 
 
 
-export async function createAcc(createdUser: { Id: number; Username: string; Password: string; }) {
+
+export async function createAcc(createdUser: { Id: number; Username: string; Password: string; IsAdmin: boolean }) {
 
     const codewarsResponse = await fetch(`https://www.codewars.com/api/v1/users/${createdUser.Username}`);
     if (codewarsResponse.status != 200) {
@@ -48,5 +49,7 @@ export async function login(loginUser: { Username: string; Password: string; }) 
 
     let data = await res.json();
     return data;
+
 }
+   
 

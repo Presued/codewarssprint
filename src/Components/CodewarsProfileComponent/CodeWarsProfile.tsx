@@ -3,6 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './CodeWarsProfile.css';
 import Footer from '../FooterComponent/FooterComponent';
 import Header from '../HeaderComponent/HeaderComponent';
+import Username from "../SignInComponent";
+import { useLocation } from 'react-router-dom';
+
 
 interface UserData {
     username?: string;
@@ -27,19 +30,22 @@ interface Props {
 }
 
 const CodewarsProfile: React.FC<Props> = ({ userId }) => {
+    const location = useLocation();
+    const Username = location.state?.Username;
     const [userData, setUserData] = useState<UserData>({});
     const [kyuLevel, setKyuLevel] = useState<number | null>(null);
     const [kyuColor, setKyuColor] = useState<string>('transparent');
 
+
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`https://www.codewars.com/api/v1/users/JLamzon`);
+            const response = await fetch(`https://www.codewars.com/api/v1/users/${Username}`);
             const data: UserData = await response.json();
             setUserData(data);
+            console.log(data)
 
             const kyuRank = Math.abs(data.ranks?.overall?.rank ?? 0);
             setKyuLevel(kyuRank);
-
             const kyuColor = data.ranks?.overall?.color ?? 'transparent';
             setKyuColor(kyuColor);
         };
@@ -61,7 +67,6 @@ const CodewarsProfile: React.FC<Props> = ({ userId }) => {
          <Header/>
         <Container className="profile-container">
             <Container className='text-container'>
-                
                 <Row className="row-title">
                     <Col xs={6}>
                         <span className="kyu text" style={{ color: kyuColor }}>{kyuLevel} Kyu</span>

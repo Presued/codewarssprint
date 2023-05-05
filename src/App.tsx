@@ -18,7 +18,7 @@ function App() {
    <Routes>
     <Route path='/' element={<SignIn />} />
    <Route path='/SignUp' element={<SignUp />} />
-   <Route path='/CodeWarsProfile' element={<CodewarsProfile userId="12345" />} />
+   <Route path='/CodeWarsProfile' element={<CodewarsProfile userId='12345' />} />
    <Route path='/SearchComponent' element={<SearchComponent/>} />
    </Routes>
    </BrowserRouter>

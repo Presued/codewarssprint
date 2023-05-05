@@ -15,9 +15,6 @@ const SignIn = (): JSX.Element => {
     const { setUser } = useContext(MyContext);
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
- 
-   
-        
     const navigate = useNavigate();
         
     const handleLogin = async (name: any) => {
@@ -26,11 +23,12 @@ const SignIn = (): JSX.Element => {
             Password
         }
         setUser(Username);
+        console.log(Username)
         try {
             let token = await login(userData);
             if (token.token != null) {
                 localStorage.setItem("Token", token.token);
-                navigate('/CodewarsProfile');
+                navigate('/CodewarsProfile', { state: {Username} });
             }
         } catch (error) {
             console.error(error);
@@ -87,5 +85,6 @@ const SignIn = (): JSX.Element => {
         </>
     )
 }
+
 
 export default SignIn;

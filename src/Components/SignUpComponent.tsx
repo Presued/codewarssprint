@@ -7,13 +7,12 @@ import SignIn from './SignInComponent'
 import { createAcc } from '../Services/DataServices'
 import { useState } from 'react'
 
-const SignUp = (): JSX.Element => {
 
+
+const SignUp = (): JSX.Element => {
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
     const navigate = useNavigate();
-
-
 
 const handleInputChange = (event: any) => {
     setUsername(event.target.value);
@@ -21,16 +20,16 @@ const handleInputChange = (event: any) => {
 
 const handleInputPassword = (event: any) => {
     setPassword(event.target.value);
-
 }
   
     const handleSubmit = async () => {
       let userData = {
           Id: 0,
-          Username,
-          Password
+          Username: Username,
+          Password: Password,
+          IsAdmin: false
       }
-      createAcc(userData)
+    //   createAcc(userData)
       const GetLoggedInData = async () => {
           let result = await createAcc(userData)
 
@@ -51,7 +50,7 @@ const handleInputPassword = (event: any) => {
                 <Row className='moveCard'>
                     <Col className='cBody'>
                         <Card className='cuzCard'>
-                            <Card.Body>
+                            <Card.Body className='cardBody'>
                                 <Row>
                                     <Col className='d-flex justify-content-center align-items-start pt-3'>
                                         <div>
